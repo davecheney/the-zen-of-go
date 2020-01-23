@@ -1,5 +1,6 @@
 = The Zen of Go
 :doctype: article
+:docinfo: private
 
 [.lead]
 Ten engineering values for writing simple, readable, maintainable Go code.
