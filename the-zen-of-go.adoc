@@ -14,11 +14,8 @@ A well designed Go package provides a single idea, a set of related behaviours.
 A good Go package starts by choosing a good name.
 Think of your package's name as an elevator pitch to describe what it provides, using just one word.
 
-Before you launch a goroutine, know when it will stop::
-Goroutines own resources; locks, variables, memory, etc.
-The sure fire way to free those resources is to stop the owning goroutine. 
-
 Handle errors explicitly::
+Robust programs are composed from pieces that handle the failure cases before they pat themselves on the back. 
 The verbosity of `if err != nil { return err }` is outweighed by the value of deliberately handling each failure condition at the point at which they occur.
 Panic and recover are not exceptions, they aren't intended to be used that way.
 
@@ -30,8 +27,9 @@ Rather than nesting deeply, keep the success path to the left using guard clause
 Leave concurrency to the caller::
 Let the caller choose if they want to run you library or function asynchronously, don't force it on them. If your library uses concurrency it should do so transparently.
 
-Plan for failure, not success::
-Robust programs are composed from pieces that handle the failure cases before they pat themselves on the back. 
+Before you launch a goroutine, know when it will stop::
+Goroutines own resources; locks, variables, memory, etc.
+The sure fire way to free those resources is to stop the owning goroutine. 
 
 Avoid package level state::
 Seek to be explicit, reduce coupling, and spooky action at a distance by providing the dependencies a type needs as fields on that type rather than using package variables.
@@ -40,6 +38,11 @@ Simplicity matters::
 Simplicity is not a synonym for unsophisticated.
 Simple doesn't mean crude, it means _readable_ and _maintainable_.
 When it is possible to choose, defer to the simpler solution.
+
+Write tests to lock in the behaviour of your package's API::
+Test first or test later, if you shoot for 100% test coverage or are happy with less, regulardless your package's papi is your contract with its users.
+Tests are the guarantees that those contracts are written in.
+Make sure you test for the behaviour that users can observe and rely on. 
 
 If you think it's slow, first prove it with a benchmark::
 So many crimes against maintainability are committed in the name of performance.
