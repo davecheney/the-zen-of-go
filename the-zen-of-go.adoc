@@ -9,7 +9,7 @@
 Ten engineering values for writing simple, readable, maintainable Go code.
 Presented at http://gophercon.org.il[GopherCon Israel 2020].
 
-Each package fulfills a single purpose::
+Each package fulfils a single purpose::
 A well designed Go package provides a single idea, a set of related behaviours.
 A good Go package starts by choosing a good name.
 Think of your package's name as an elevator pitch to describe what it provides, using just one word.
@@ -40,7 +40,7 @@ Simple doesn't mean crude, it means _readable_ and _maintainable_.
 When it is possible to choose, defer to the simpler solution.
 
 Write tests to lock in the behaviour of your package's API::
-Test first or test later, if you shoot for 100% test coverage or are happy with less, regulardless your package's papi is your contract with its users.
+Test first or test later, if you shoot for 100% test coverage or are happy with less, regardless your package's API is your contract with its users.
 Tests are the guarantees that those contracts are written in.
 Make sure you test for the behaviour that users can observe and rely on. 
 
