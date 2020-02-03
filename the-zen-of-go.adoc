@@ -25,7 +25,7 @@ Avoid control flow that requires deep indentation.
 Rather than nesting deeply, keep the success path to the left using guard clauses.
 
 Leave concurrency to the caller::
-Let the caller choose if they want to run you library or function asynchronously, don't force it on them. If your library uses concurrency it should do so transparently.
+Let the caller choose if they want to run your library or function asynchronously, don't force it on them. If your library uses concurrency it should do so transparently.
 
 Before you launch a goroutine, know when it will stop::
 Goroutines own resources; locks, variables, memory, etc.
